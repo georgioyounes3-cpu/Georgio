@@ -1,0 +1,6 @@
+{
+  "name": "LAU Student Carpool",
+  "description": "Connecting Lebanese American University students to share rides, split commute costs, and travel between Beirut, Byblos, and campus routes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

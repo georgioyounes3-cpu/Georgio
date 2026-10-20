@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Ride": {
+      "title": "Ride",
+      "description": "Represents a shared carpool ride between campus and student residential locations",
+      "type": "object",
+      "properties": {
+        "driverId": { "type": "string" },
+        "driver": { "type": "object" },
+        "originArea": { "type": "string" },
+        "destinationCampus": { "type": "string" },
+        "date": { "type": "string" },
+        "departureTime": { "type": "string" },
+        "estimatedDurationMins": { "type": "number" },
+        "totalSeats": { "type": "number" },
+        "availableSeats": { "type": "number" },
+        "carModel": { "type": "string" },
+        "carColor": { "type": "string" },
+        "licensePlateSnippet": { "type": "string" },
+        "stops": { "type": "array" },
+        "luggageAllowance": { "type": "string" },
+        "preferences": { "type": "object" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" },
+        "requests": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["driverId", "originArea", "destinationCampus", "date", "departureTime", "totalSeats", "availableSeats", "status"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Profile information for registered LAU student users",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "campus": { "type": "string" },
+        "major": { "type": "string" },
+        "year": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "verifiedStudent": { "type": "boolean" },
+        "carModel": { "type": "string" },
+        "carColor": { "type": "string" }
+      },
+      "required": ["name", "campus", "phone", "email"]
+    }
+  },
+  "firestore": {
+    "/rides/{rideId}": {
+      "schema": { "$ref": "#/entities/Ride" },
+      "description": "Public directory of student carpool rides"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Student user profiles"
+    }
+  }
+}
